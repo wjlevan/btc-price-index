@@ -5,11 +5,6 @@ let bpi;
 export function reqListenerBPI() {
     let responseText = JSON.parse(this.responseText);
     bpi = responseText;
-    // bpi = [
-    //     responseText['bpi']['USD']['code'],
-    //     responseText['bpi']['USD']['rate_float'],
-    //     responseText['time']['updated']
-    // ]
     return bpi;
 }
 
@@ -37,7 +32,6 @@ export function getBPI() {
     return bpi;
 }
 
-
 export function setSelection(selection) {
     let currency = bpi['bpi'][selection]['code'];
     let price = bpi['bpi'][selection]['rate_float'];
@@ -45,3 +39,11 @@ export function setSelection(selection) {
     return [currency, price, date];
 }
 
+export function changeDate(date) {
+    let newDate = new Date(date);
+    let dateOffset = 3*60*60*1000;
+    newDate-= dateOffset;
+    newDate = new Date(newDate);
+    date = newDate.toString().substring(0, 25) + "PDT";
+    return date;
+}

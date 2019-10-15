@@ -1,0 +1,15 @@
+.footer {
+    display: inline-block;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    /* white-space: nowrap; */
+    font-size: 100%;
+}
+

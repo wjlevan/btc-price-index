@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
-import { MainDisplay } from './components/MainComponents';
+import { MainComponent } from './components/MainComponent';
 import { NavComponent } from './components/NavComponent';
+import { FooterComponent } from './components/FooterComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="container">
+      <header className="App App-header">
         <NavComponent />
-        <MainDisplay />
+        <MainComponent />
       </header>
       <div>
+        <FooterComponent />
 
     </div>
     </div>

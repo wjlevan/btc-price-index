@@ -1,3 +1,7 @@
 .container {
     color: black;
 }
+
+.date {
+    font-size: 50%;
+}
