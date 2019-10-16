@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { getRequestBPI, getBPI, setSelection } from './../functions/myFunctions';
-import './../css/MainComponents-Stylesheet.css';
+import './../css/MainComponent.css';
 
 
-export class MainDisplay extends Component {
+export class MainComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  './../css/NavComponent-Stylesheet.css';
+import  './../css/NavComponent.css';
 
 export class NavComponent extends Component {
     constructor(props) {
