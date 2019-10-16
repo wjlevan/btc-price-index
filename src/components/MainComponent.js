@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { getRequestBPI, getBPI, setSelection, changeDate } from '../functions/myFunctions';
 import './../css/MainComponent.css';
-import logo from './bitcoin.gif'
+import logo from './../assets/bitcoin.gif'
+
+
 
 export class MainComponent extends Component {
     constructor(props) {
@@ -14,16 +16,19 @@ export class MainComponent extends Component {
         }
 
         this.HandleClick = this.HandleClick.bind(this);
+        this.mouseHover = this.mouseHover.bind(this);
+        this.mouseLeave = this.mouseLeave.bind(this);
+
     }
 
     componentDidMount() {
         let myData = getRequestBPI();
         let bpi;
 
+
         let x = setInterval(() => {
             if(!(myData === undefined)) {
                 bpi = getBPI();
-                console.log(bpi);
                 clearInterval(x);
                 let currency = bpi['bpi']['USD']['code'];
 
@@ -64,14 +69,30 @@ export class MainComponent extends Component {
     }
         
 
+    mouseHover() {
+        let hvr2 = document.getElementById("mybuttons");
+        hvr2.addEventListener("mouseover", event => {
+            event.target.style.color = "orange";
+        });
+    }
+
+    mouseLeave() {
+        let hvr = document.getElementById("mybuttons");
+        hvr.addEventListener("mouseleave", event => {
+            event.target.style.color = "black";
+        });        
+    }
+
     render() {
         return (
             <div className="container">
                 <img src={logo} alt="bitcoin-logo" height="10%" width="10%"/> <br/> <br/>                
 
-                <input type="button" className="btn btn-usd" value="USD" onClick={this.HandleClick}></input>
-                <input type="button" className="btn btn-gbp" value="GBP" onClick={this.HandleClick}></input>
-                <input type="button" className="btn btn-eur" value="EUR" onClick={this.HandleClick}></input> <br /> <br />
+                <span id="mybuttons">
+                    <input type="button" className="btn btn-usd" value="USD" onClick={this.HandleClick} onMouseOver={this.mouseHover} onMouseLeave={this.mouseLeave}></input>
+                    <input type="button" className="btn btn-gbp" value="GBP" onClick={this.HandleClick} onMouseOver={this.mouseHover} onMouseLeave={this.mouseLeave}></input>
+                    <input type="button" className="btn btn-eur" value="EUR" onClick={this.HandleClick} onMouseOver={this.mouseHover} onMouseLeave={this.mouseLeave}></input> <br /> <br />
+                </span>
 
                 {this.state.price} <br /> <br />
 

@@ -41,9 +41,6 @@ export function setSelection(selection) {
 
 export function changeDate(date) {
     let newDate = new Date(date);
-    let dateOffset = 3*60*60*1000;
-    newDate-= dateOffset;
-    newDate = new Date(newDate);
     date = newDate.toString().substring(0, 25) + "PDT";
     return date;
 }
