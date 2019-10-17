@@ -41,15 +41,9 @@ export function setSelection(selection) {
 }
 
 
-// Change date from UTC to Local Time
+// Change date from UTC to Local 
 export function changeDate(date) {
-    let newDate = new Date(date); // Convert time to Local Time 
+    let newDate = new Date(date); // Convert time to Local
     date = newDate.toLocaleString('en-US').replace(',',''); // Convert to AM/PM, remove comma
     return date;
-}
-
-
-// Pass global variable my_bpi to other files
-export function getBPI() {
-    return my_bpi;
 }
