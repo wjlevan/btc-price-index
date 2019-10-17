@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getRequestBPI, setSelection, changeDate } from '../functions/myFunctions';
 import './../css/MainComponent.css';
-import logo from './../assets/bitcoin.gif'
+let logo = require('./../assets/bitcoin.gif');
 
 
 

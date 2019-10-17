@@ -13,8 +13,6 @@ export class FooterComponent extends Component {
         return (
             <div className="footer">
                 Powered by <a className="text" href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>
-                {/* Powered by CoinDesk */}
-
             </div>
         )
     }
