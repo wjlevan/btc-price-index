@@ -23,9 +23,6 @@
 
 #grid-second {
     grid-area: "second";
-    /* grid-row-start: row1;
-    grid-row-end: row2; */
-
     position:  fixed;
     top: 40px;
     left: 5px;
