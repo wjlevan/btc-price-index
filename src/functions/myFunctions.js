@@ -6,9 +6,11 @@ export function getRequestBPI() {
     let oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListenerBPI); // Call reqListenerBPI on load
 
+
     let btc_realtime = "https://api.coindesk.com/v1/bpi/currentprice.json";
     oReq.open("GET", btc_realtime);
     oReq.send();
+    
 
     let x = setInterval(
         () => {
@@ -24,12 +26,18 @@ export function getRequestBPI() {
 }
 
 
+
+
+
+
 // Set global variable my_bpi on API request load
 export function reqListenerBPI() {
     let responseText = JSON.parse(this.responseText);
     my_bpi = responseText; // Set global variable my_bpi
     return;
 }
+
+
 
 
 // Store relevant data using global variable my_bpi
@@ -39,6 +47,7 @@ export function setSelection(selection) {
     let date = my_bpi['time']['updated'];
     return [currency, price, date];
 }
+
 
 
 // Change date from UTC to Local 

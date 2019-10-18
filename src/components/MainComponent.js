@@ -27,25 +27,33 @@ export class MainComponent extends Component {
             else {
                 position = 0;}
         }, interval);
-        }
+    }
+
+
     componentDidMount() {
+
 
         // Make API request
         let myData = getRequestBPI();
     
+
         // Get data from API
         let interval = 500;
         let x = setInterval(() => {
+
 
             // Run if API data has loaded
             if(!(myData === undefined)) {
                 clearInterval(x);
 
+
                 // Set default view to USD
                 let currency = setSelection('USD')[0];
 
+
                 let price = setSelection('USD')[1];
                 price = Number(price.toFixed(2)).toLocaleString(); // Format to 2 decimals
+
 
                 let date = setSelection('USD')[2];
                 date = changeDate(date);    // Change default UTC to Local
@@ -55,6 +63,9 @@ export class MainComponent extends Component {
                     date: "Last updated: " + date,
                     selection: "USD"
                 });
+
+
+                
 
                 // Set mouse effects
                 let hvr = document.getElementById("mybuttons");
@@ -66,9 +77,6 @@ export class MainComponent extends Component {
                     event.target.style.color = "black";
                 });
             }}, interval);
-
-                
-
     }
     
 
@@ -76,12 +84,15 @@ export class MainComponent extends Component {
     HandleClick(event) {
         this.setState({
             selection: event.target.value});   
-        let newData = setSelection(event.target.value);
 
+
+        let newData = setSelection(event.target.value);
         let currency = newData[0];
         
+
         let price = newData[1];
         price = Number(price.toFixed(2)).toLocaleString(); // Format to 2 decimals
+
 
         let date = newData[2];
         date = changeDate(date); // Change default UTC to Local 
@@ -100,16 +111,19 @@ export class MainComponent extends Component {
             <div className="container">                    
                     <span id="mylogo"/>                
 
+
                     <span id="mybuttons">
                         <input type="button" className="btn btn-usd" value="USD" onClick={this.HandleClick}></input>
                         <input type="button" className="btn btn-gbp" value="GBP" onClick={this.HandleClick}></input>
                         <input type="button" className="btn btn-eur" value="EUR" onClick={this.HandleClick}></input>
                     </span> <br/>
 
+
                     <span id="content">
                         {this.state.price} <br />
                         {this.state.date}
                     </span>
+
 
                 </div>
 
