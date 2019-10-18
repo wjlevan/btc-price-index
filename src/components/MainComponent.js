@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { getRequestBPI, setSelection, changeDate } from '../functions/myFunctions';
 import './../css/MainComponent.css';
-import logo from './../assets/bitcoin.gif'
 
 
 
@@ -58,7 +57,12 @@ export class MainComponent extends Component {
                     event.target.style.color = "black";
                 });    
                 
-            }}, 500)        
+            }}, 500);
+
+
+            
+            
+
     }
     
 
@@ -89,7 +93,8 @@ export class MainComponent extends Component {
     render() {
         return (
             <div className="container">
-                <img src={logo} alt="bitcoin-logo" height="10%" width="10%"/> <br/> <br/>                
+                {/* <img src={logo} alt="bitcoin-logo" height="10%" width="10%"/> <br/> <br/>                 */}
+
 
                 <span id="mybuttons">
                     <input type="button" className="btn btn-usd" value="USD" onClick={this.HandleClick}></input>

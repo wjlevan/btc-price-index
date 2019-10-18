@@ -3,12 +3,15 @@ import './App.css';
 import { MainComponent } from './components/MainComponent';
 import { NavComponent } from './components/NavComponent';
 import { FooterComponent } from './components/FooterComponent';
+import { LogoComponent } from './components/LogoComponent';
+
 
 function App() {
   return (
     <div className="container">
       <header className="App App-header">
         <NavComponent />
+        <LogoComponent />
         <MainComponent />
       </header>
       <div>
@@ -20,3 +23,4 @@ function App() {
 }
 
 export default App;
+
