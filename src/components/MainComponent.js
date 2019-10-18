@@ -15,12 +15,26 @@ export class MainComponent extends Component {
         }
     }
 
+
+    componentWillMount() {
+        // Animate image
+        let position = 0;
+        let interval = 50;
+        setInterval (() => {
+            document.getElementById("mylogo").style.backgroundPosition = `0px ${position}px`;
+            if(position<4400) {
+                position = position + 200;}
+            else {
+                position = 0;}
+        }, interval);
+        }
     componentDidMount() {
 
         // Make API request
         let myData = getRequestBPI();
     
         // Get data from API
+        let interval = 500;
         let x = setInterval(() => {
 
             // Run if API data has loaded
@@ -40,7 +54,7 @@ export class MainComponent extends Component {
                     price: "Price: " + price + " " + currency,
                     date: "Last updated: " + date,
                     selection: "USD"
-                })
+                });
 
                 // Set mouse effects
                 let hvr = document.getElementById("mybuttons");
@@ -51,20 +65,10 @@ export class MainComponent extends Component {
                 hvr.addEventListener("mouseout", event => {
                     event.target.style.color = "black";
                 });
-                
-                
-                // Animate image
-                let position = 0;
-                let interval = 50;
-                setInterval (() => {
-                    document.getElementById("mylogo").style.backgroundPosition = `0px ${position}px`;
-                    if(position<4400) {
-                        position = position + 200;}
-                    else {
-                        position = 0;}
-                }, interval);
+            }}, interval);
 
-            }}, 500);
+                
+
     }
     
 
