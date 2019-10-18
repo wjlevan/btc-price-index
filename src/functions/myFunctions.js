@@ -20,7 +20,7 @@ export function getRequestBPI() {
                  clearInterval(x);
                 return my_bpi; // Return data if loaded
             }
-        }, 500        
+        }, 1000        
     )
     return x; // Return if data not loaded
 }

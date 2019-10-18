@@ -38,7 +38,7 @@ export class MainComponent extends Component {
     
 
         // Get data from API
-        let interval = 500;
+        let interval = 1000;
         let x = setInterval(() => {
 
 
