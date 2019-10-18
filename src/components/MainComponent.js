@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 import { getRequestBPI, setSelection, changeDate } from '../functions/myFunctions';
 import './../css/MainComponent.css';
-import logo from './../assets/bitcoin.gif'
-
 
 
 export class MainComponent extends Component {
     constructor(props) {
         super(props);
+        this.HandleClick = this.HandleClick.bind(this);
         this.state = {
             currency: "",
             price: "",
             date: "",
-            selection: ""
+            selection: "" 
         }
-
-        this.HandleClick = this.HandleClick.bind(this);
     }
-
-
 
     componentDidMount() {
 
         // Make API request
         let myData = getRequestBPI();
     
-
         // Get data from API
         let x = setInterval(() => {
 
@@ -56,12 +50,23 @@ export class MainComponent extends Component {
 
                 hvr.addEventListener("mouseout", event => {
                     event.target.style.color = "black";
-                });    
+                });
                 
-            }}, 500)        
+                
+                // Animate image
+                let position = 0;
+                let interval = 50;
+                setInterval (() => {
+                    document.getElementById("mylogo").style.backgroundPosition = `0px ${position}px`;
+                    if(position<4400) {
+                        position = position + 200;}
+                    else {
+                        position = 0;}
+                }, interval);
+
+            }}, 500);
     }
     
-
 
     // Change currency on click
     HandleClick(event) {
@@ -88,22 +93,22 @@ export class MainComponent extends Component {
 
     render() {
         return (
-            <div className="container">
-                <img src={logo} alt="bitcoin-logo" height="10%" width="10%"/> <br/> <br/>                
+            <div className="container">                    
+                    <span id="mylogo"/>                
 
-                <span id="mybuttons">
-                    <input type="button" className="btn btn-usd" value="USD" onClick={this.HandleClick}></input>
-                    <input type="button" className="btn btn-gbp" value="GBP" onClick={this.HandleClick}></input>
-                    <input type="button" className="btn btn-eur" value="EUR" onClick={this.HandleClick}></input> <br /> <br />
-                </span>
+                    <span id="mybuttons">
+                        <input type="button" className="btn btn-usd" value="USD" onClick={this.HandleClick}></input>
+                        <input type="button" className="btn btn-gbp" value="GBP" onClick={this.HandleClick}></input>
+                        <input type="button" className="btn btn-eur" value="EUR" onClick={this.HandleClick}></input>
+                    </span> <br/>
 
-                {this.state.price} <br /> <br />
+                    <span id="content">
+                        {this.state.price} <br />
+                        {this.state.date}
+                    </span>
 
-                <div className="date">
-                    {this.state.date}
                 </div>
 
-            </div>
         )  
     }
 }

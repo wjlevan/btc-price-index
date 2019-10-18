@@ -12,9 +12,7 @@ export class FooterComponent extends Component {
     render() {
         return (
             <div className="footer">
-                Powered by <a className="text" href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>
-                {/* Powered by CoinDesk */}
-
+                Powered by <a className="text" href="https://www.coindesk.com/price/bitcoin" target="_blank">CoinDesk</a>
             </div>
         )
     }
