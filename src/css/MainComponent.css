@@ -2,6 +2,20 @@
     color: black;
 }
 
-canvas {
-    border: 1px solid black;
+
+#mylogo {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: url('./../assets/spritesheet.png?sprite') 0px 0px;   
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -160px;
+}
+
+#mybuttons, #content {
+    display: block;
+    position: relative;
+    top: -120px;
 }
