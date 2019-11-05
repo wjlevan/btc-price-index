@@ -1,9 +1,9 @@
-##Bitcoin Price Index
+## Bitcoin Price Index
 
-####Created using React components and the CoinDesk API.
+#### Created using React components and the CoinDesk API.
 
-####This web application provides real-time Bitcoin prices in US Dollars, British Pounds, and Euros.
+#### This web application provides real-time Bitcoin prices in US Dollars, British Pounds, and Euros.
 
 
 
-CoinDesk API: https://www.coindesk.com/api
+##### CoinDesk API: https://www.coindesk.com/api
