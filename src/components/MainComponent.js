@@ -108,7 +108,7 @@ export class MainComponent extends Component {
 
     render() {
         return (
-            <div className="container">                    
+            <div className="main-container">                    
                     <span id="mylogo"/>                
 
 
@@ -120,8 +120,8 @@ export class MainComponent extends Component {
 
 
                     <span id="content">
-                        {this.state.price} <br />
-                        {this.state.date}
+                        <span id="my-price">{this.state.price}</span> <br />
+                        <span id="my-date">{this.state.date}</span>
                     </span>
 
 
