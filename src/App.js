@@ -8,14 +8,9 @@ import { FooterComponent } from './components/FooterComponent';
 function App() {
   return (
     <div className="container">
-      <header className="App App-header">
-        <TitleComponent />
-        <MainComponent />
-      </header>
-      <div>
-        <FooterComponent />
-
-    </div>
+      <div className="title"><TitleComponent /></div>
+      <div className="main"><MainComponent /></div>
+      <div className="footer"><FooterComponent /></div>
     </div>
   );
 }

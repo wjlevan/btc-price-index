@@ -1,20 +1,28 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-}
 
-.App-header {
+.container {
   min-height: 90vh;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto 1fr;
   align-items: center;
   color: white;
   font-size: calc(10px + 2vmin);
+  grid-template-areas: 
+    "title"
+    "main"
+    "footer";
+  text-align: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.title {
+  grid-area: "title";
+}
+
+.main {
+  grid-area: "main";
+}
+
+.footer {
+  grid-area: "footer";
 }
